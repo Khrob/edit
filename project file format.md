@@ -5,23 +5,16 @@
 
 
 
-Should it be binary or text? I'm inclined to start with text, 
-at least as it gets developed. Text will also play nicely with
-version control
+Should it be binary or text? I'm inclined to start with text, at least as it gets developed. Text will also play nicely with version control
 
-I definitely want to store every change, as I firmly believe you 
-should never lose undo information when you close a project.
+I definitely want to store every change, as I firmly believe you should never lose undo information when you close a project.
 
-I'm thinking a timeline should be continuous, but something that 
-has discrete frames (like a video) will automatically round down 
-and snap to their frame boundary. 
+I'm thinking a timeline should be continuous, but something that has discrete frames (like a video) will automatically round down and snap to their frame boundary. 
 
 	Contrived example:
-
 		A 4ps video at 12.463 would snap and start at 12.25 seconds
 
-The could be issues when two clips with different frame rates abut, 
-but I'm keen to try this approach nonetheless.
+The could be issues when two clips with different frame rates abut, but I'm keen to try this approach nonetheless.
 
 
 
