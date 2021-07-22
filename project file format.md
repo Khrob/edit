@@ -30,8 +30,8 @@ Basic blobs:
 
 ## HEADER
 
-	-  Magic Number/String 				Never change (0xED17 ?)
-	-  File Type Version Number 		Change if this file format changes 
+* Magic Number/String 				Never change (0xED17 ?)
+* File Type Version Number 		Change if this file format changes 
 
 
 ## BLOB INDEX	
