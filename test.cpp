@@ -19,9 +19,38 @@ void silly_string_test()
 	printf("\n%d\n", len);
 }
 
+int test_write_file ()
+{
+	int file_id = open_file("writetest.file");
+	printf("writetest.file id is %d\n", file_id);
+	if (file_id != -1) { close_file(file_id); }
+	return -1;
+}
+
+int test_read_file ()
+{
+	void *data = read_file ("test.file");
+	if (data == NULL) { 
+		printf("FAIL: Couldn't read test.file.");
+		return -1;
+	} else { 
+		printf("%s\n", (char *)data);
+		return 0;
+	}
+}
+
+
+
 int main () 
 {
-	silly_string_test();
+	int passcount = 0;
+	int failcount = 0;
+
+	// silly_string_test();
+
+	test_write_file();
+	test_read_file();
+
 	return 0;
 }
 
