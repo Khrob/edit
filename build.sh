@@ -1,5 +1,11 @@
+mkdir -p build
+
+pushd build
+
 rm test
 
-clang test.cpp -o test
+clang ../test.cpp -o test
 
-./test
+popd 
+
+build/test
