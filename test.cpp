@@ -21,7 +21,7 @@ void silly_string_test()
 
 int test_write_file ()
 {
-	int file_id = open_file("writetest.file");
+	int file_id = open_file("test/writetest.file");
 	printf("writetest.file id is %d\n", file_id);
 	if (file_id != -1) { close_file(file_id); }
 	return -1;
@@ -29,7 +29,7 @@ int test_write_file ()
 
 int test_read_file ()
 {
-	void *data = read_file ("test.file");
+	void *data = read_file ("resources/test.file");
 	if (data == NULL) { 
 		printf("FAIL: Couldn't read test.file.");
 		return -1;
