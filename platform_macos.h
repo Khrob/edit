@@ -48,7 +48,7 @@ int open_file (char* file_path)
 {
 	int file_descriptor = 0;
 
-	file_descriptor = open(file_path, O_CREAT|O_WRONLY|O_TRUNC);
+	file_descriptor = open(file_path, O_CREAT|O_RDWR|O_TRUNC, S_IRWXU|S_IRGRP|S_IROTH);
 
 	if (file_descriptor == -1) {
 		printf("ERROR: Couldn't open or create file %s: %d\n", file_path, errno);
