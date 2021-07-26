@@ -21,10 +21,22 @@ void silly_string_test()
 
 int test_write_file ()
 {
-	int file_id = open_file("test/writetest.file");
-	printf("writetest.file id is %d\n", file_id);
-	if (file_id != -1) { close_file(file_id); }
-	return -1;
+	int res = -1;
+	int file_descriptor = open_file("test/writetest.file");
+	printf("writetest.file id is %d\n", file_descriptor);
+
+	if (file_descriptor == -1) { 
+		close_file(file_descriptor); 
+	}
+	else {
+		char *text = "there's only one Bengo Macarona.";
+		res = write(file_descriptor, text, strlen(text));
+		if (res == -1) { printf("Error writing text\n"); }
+		else { printf ("res: %d\n", res); }
+	}
+
+	close_file(file_descriptor);
+	return res;
 }
 
 int test_read_file ()
