@@ -6,7 +6,8 @@
 
 */
 
-#include "platform_macos.h"
+#define PLATFORM_MACOS
+#include "platform.h"
 
 
 typedef struct 
