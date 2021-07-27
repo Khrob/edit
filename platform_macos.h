@@ -7,7 +7,7 @@
 
 
 // Returns the complete contents of the given file, or NULL on any error.
-void* read_file (char* file_path)
+void* read_file (const char* file_path)
 {
 	// NOTE (khrob): We're not using memory allocators yet, so 
 	// this returns memory that you'll need to free yourself.
@@ -25,7 +25,7 @@ void* read_file (char* file_path)
 
 	if (r == -1) { printf("ERROR Getting file size: %d\n", errno); }
 	else { 
-		printf("File is %lld bytes big\n", s.st_size); 
+		// printf("File is %lld bytes big\n", s.st_size); 
 
 		file_data = malloc(s.st_size);
 
@@ -43,8 +43,14 @@ void* read_file (char* file_path)
 }
 
 
+int write_binary_file (const char *file_path, void *data, uint16_t size)
+{
+	return -1;
+}
+
+
 // Returns the file id, or -1 if there's an error.
-int open_file (char* file_path) 
+int open_file (const char* file_path) 
 {
 	int file_descriptor = 0;
 
@@ -52,9 +58,7 @@ int open_file (char* file_path)
 
 	if (file_descriptor == -1) {
 		printf("ERROR: Couldn't open or create file %s: %d\n", file_path, errno);
-	} else {
-		printf ("Opened file %d\n", file_descriptor);	
-	}
+	} 
 
 	return file_descriptor;
 }
