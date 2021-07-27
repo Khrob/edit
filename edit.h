@@ -12,7 +12,7 @@
 
 typedef struct 
 {
-	char	 	magic[2];			// Should always be 0xED17
+	char	 	magic[2];			// Should always be 0xED17ED17
 	int 		version;			// File Format version 
 } 
 Edit_File_Header;
